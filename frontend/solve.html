@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePlatform | Solve</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Monaco Editor Scripts -->
+    <script>var require = { paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.38.0/min/vs' } };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.38.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">Code<span>Platform</span></div>
+        </a>
+    </nav>
+    
+    <div class="workspace-container">
+        <!-- Problem Description Panel -->
+        <div class="problem-panel" id="problemPanel">
+            <h1 id="probTitle">Loading...</h1>
+            
+            <div class="problem-section">
+                <h3>Description</h3>
+                <div class="problem-description" id="probDesc"></div>
+            </div>
+
+            <div class="problem-section" id="constraintsContainer" style="display: none;">
+                <h3>Constraints</h3>
+                <div class="problem-description"><pre id="probConstraints"></pre></div>
+            </div>
+
+            <div class="problem-section">
+                <h3>Details</h3>
+                <p>Time Limit: <span id="probTimeLimit"></span> ms</p>
+            </div>
+            
+            <div class="problem-section" id="samplesContainer">
+                <h3>Sample Test Cases</h3>
+                <div id="probSamples"></div>
+            </div>
+        </div>
+
+        <!-- Code Editor Panel -->
+        <div class="code-panel">
+            <div class="editor-header">
+                <select id="languageSelect" class="language-select">
+                    <option value="python">Python 3</option>
+                    <option value="cpp">C++ (g++)</option>
+                    <option value="javascript">JavaScript (Node.js)</option>
+                </select>
+                <button class="btn primary-btn" id="runBtn">Run Code</button>
+            </div>
+            
+            <!-- Monaco Editor Container -->
+            <div id="editor"></div>
+            
+            <!-- Console -->
+            <div class="console-panel">
+                <div class="console-header">Console Output</div>
+                <div class="console-body" id="consoleOutput">
+                    Run your code to see the output here...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

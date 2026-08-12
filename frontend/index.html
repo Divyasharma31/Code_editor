@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePlatform | Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Code<span>Platform</span></div>
+    </nav>
+    <div class="container">
+        <div class="header-section">
+            <h1>Problem Dashboard</h1>
+            <button class="btn primary-btn" id="openModalBtn">+ Add Problem via Prompt</button>
+        </div>
+        
+        <div class="problem-list" id="problemList">
+            <!-- Problems will be injected here -->
+        </div>
+    </div>
+
+    <!-- Add Problem Modal -->
+    <div id="addModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Create New Problem</h2>
+            <p class="subtitle">Paste the problem description, constraints, and examples below. Our smart parser will extract everything automatically.</p>
+            
+            <textarea id="promptInput" rows="15" placeholder="Example:
+Two Sum
+Given an array of integers nums and an integer target...
+
+Constraints:
+2 <= nums.length <= 10^4
+...
+Time Limit: 1 sec
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+"></textarea>
+            
+            <div class="modal-actions">
+                <button class="btn secondary-btn" id="parseBtn">Auto-Parse & Create</button>
+            </div>
+            
+            <div id="parseStatus" class="status-msg"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

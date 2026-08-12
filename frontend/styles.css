@@ -1,0 +1,290 @@
+:root {
+    --bg-dark: #0f111a;
+    --bg-panel: #1a1d27;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --success: #10b981;
+    --danger: #ef4444;
+    --border-color: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--bg-panel);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+    background-color: var(--bg-panel);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.problem-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.problem-card {
+    background-color: var(--bg-panel);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.problem-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary-color);
+}
+
+.problem-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.problem-card a {
+    text-decoration: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: var(--bg-panel);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 60%;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+textarea {
+    width: 100%;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1rem;
+    font-family: monospace;
+    resize: vertical;
+    margin-bottom: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.status-msg {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.success { color: var(--success); }
+.error { color: var(--danger); }
+
+/* Workspace styles */
+.workspace-container {
+    display: flex;
+    height: calc(100vh - 65px);
+}
+
+.problem-panel {
+    width: 40%;
+    padding: 2rem;
+    overflow-y: auto;
+    border-right: 1px solid var(--border-color);
+    background-color: var(--bg-dark);
+}
+
+.problem-panel h1 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.problem-section {
+    margin-bottom: 1.5rem;
+}
+
+.problem-section h3 {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.problem-description pre {
+    background: var(--bg-panel);
+    padding: 1rem;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    font-family: inherit;
+}
+
+.code-panel {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header {
+    background-color: var(--bg-panel);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+select.language-select {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.4rem;
+    border-radius: 4px;
+    outline: none;
+}
+
+#editor {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.console-panel {
+    height: 250px;
+    background-color: var(--bg-panel);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.console-header {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.console-body {
+    padding: 1rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    font-family: monospace;
+}
+
+.tc-result {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-color);
+}
+
+.tc-result.passed {
+    border-left: 4px solid var(--success);
+}
+.tc-result.failed {
+    border-left: 4px solid var(--danger);
+}
+
+.tc-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
